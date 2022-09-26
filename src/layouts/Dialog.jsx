@@ -5,8 +5,9 @@ const DialogContainer = styled.div`
     height: 100vh;
     left: 0;
     opacity: 0;
-    position: absolute;
+    position: fixed;
     top: 0;
+    transition: all .25s ease-in-out;
     visibility: hidden;
     width: 100vw;
 

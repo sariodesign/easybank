@@ -15,6 +15,8 @@ const FooterInner = styled.div`
     flex-direction: column;
 
     @media (min-width: 1280px) {
+        align-items: flex-start;
+        flex-direction: row;
         max-width: 1280px;
         margin: 0 auto;
     }
@@ -22,6 +24,15 @@ const FooterInner = styled.div`
     a {
         color: var(--grayish-blue);
         text-decoration: none;
+    }
+`
+
+const FooterCompany = styled.div`
+    @media (min-width: 1280px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 25%;        
     }
 `
 
@@ -43,15 +54,18 @@ const FooterMenu = styled.nav`
     display: flex;
     flex-direction: column;
     margin-bottom: 32px;
+    row-gap: 20px;
 
     @media (min-width: 1280px) {
-        margin-bottom: 0
+        margin-bottom: 0;
         flex-direction: row;
         flex-wrap: wrap;
     } 
 
     a {
-        margin-bottom: 20px
+        @media (min-width: 1280px) {
+            width: 50%;
+        }
     }  
 `
 
@@ -59,6 +73,10 @@ const FooterCopy = styled.div`
     display: flex;
     gap: 20px;
     flex-direction: column;
+
+    @media (min-width: 1280px) {
+        margin-left: auto;
+    }
 `
 
 const FooterLogo = styled.img`
@@ -69,14 +87,14 @@ function Footer() {
     return (
         <FooterContainer>
             <FooterInner>
-                <div>
+                <FooterCompany>
                     <Link to="/">
                         <FooterLogo src="./logo-inverse.svg" alt="Easybank logo" />
                     </Link>
                     <Socials>
                         { socialLinks.map((item,index) => <Link key={index} to={item.path}><img src={item.icon} /></Link>) }
                     </Socials>
-                </div>
+                </FooterCompany>
                 <FooterMenu>
                     { menuLinks.map((item, index) => <Link key={index} to={item.path}>{item.label}</Link>) }
                 </FooterMenu>

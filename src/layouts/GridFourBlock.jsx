@@ -29,7 +29,16 @@ const GridItem = styled.article`
 
     h3 {
         color: var(--dark-blue);
+        font-weight: 400;
         margin: 0 0 26px;
+
+        &:hover {
+            color: var(--lime-green);
+        }
+
+        @media (hover:hover) {
+            cursor: pointer;
+        } 
     }
 
     p {

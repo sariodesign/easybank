@@ -2,7 +2,7 @@ const menuLinks = [
     {
         path: '/',
         label: 'Home',
-        bg: 'transparent'
+        bg: 'transparent',
     },
     {
         path: '/about',
@@ -23,6 +23,12 @@ const menuLinks = [
         path: '/careers',
         label: 'Careers',
         bg: 'transparent'
+    },
+    {
+        path: '/privacy',
+        label: 'Privacy Policy',
+        bg: 'transparent',
+        footer: true
     }
 
 ]
