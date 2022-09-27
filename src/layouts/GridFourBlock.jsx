@@ -69,21 +69,19 @@ const GridItemContent = styled.div`
 `
 
 function GridFourBlock({items, limit, icon, bg, pad, centered = false}) {
+    const articles = items.slice(0, limit);
     return (
         <GridContainer items={items} icon={icon} limit={limit}>
             {
-                items.map((item, index) => 
-                    { limit <= index && (
-                            <GridItem>
-                                <img src={item.image} alt={item.title} />
-                                <GridItemContent bg={bg} pad={pad} centered={centered}>
-                                    { item.author && <span>{item.author}</span> }
-                                    <h3>{item.title}</h3>
-                                    <p>{item.abstract}</p>
-                                </GridItemContent>
-                            </GridItem>
-                        )
-                    }
+                articles.map((item, index) => 
+                    <GridItem key={index}>
+                        <img src={item.image} alt={item.title} />
+                        <GridItemContent bg={bg} pad={pad} centered={centered}>
+                            { item.author && <span>{item.author}</span> }
+                            <h3>{item.title}</h3>
+                            <p>{item.abstract}</p>
+                        </GridItemContent>
+                    </GridItem>
                 )
             }
         </GridContainer>
