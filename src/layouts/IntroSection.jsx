@@ -7,6 +7,11 @@ const IntroTitle = styled.h2`
     line-height: 24px;
     font-weight: 400;
     margin: 0 0 16px;
+    width: 100%;
+
+    @media (max-width: 1279px) {
+        text-align: center
+    }
 
     @media (min-width: 1280px) {
         font-size: 24px;
@@ -18,6 +23,10 @@ const IntroTitle = styled.h2`
 const IntroText = styled.p`
     color: var(--grayish-blue);
     margin: 0 0 54px;
+
+    @media (max-width: 1279px) {
+        text-align: center
+    }
 
     @media (min-width: 1280px) {
         margin-bottom: 72px

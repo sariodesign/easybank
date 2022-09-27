@@ -1,13 +1,16 @@
 import Page from '../layouts/Page';
-import Main from '../layouts/Main';
+import Hero from '../components/Hero';
+import Articles from '../components/Articles';
 
 function Blog() {
 
     return (
         <Page>
-            <Main itemsCentered>
-                Blog
-            </Main>
+            <Hero 
+                title="Blog page digital banking" 
+                subtitle="Read our articles"
+            />
+            <Articles limit={8} />
         </Page>
     )
 }

@@ -20,11 +20,6 @@ const FooterInner = styled.div`
         max-width: 1280px;
         margin: 0 auto;
     }
-
-    a {
-        color: var(--grayish-blue);
-        text-decoration: none;
-    }
 `
 
 const FooterCompany = styled.div`
@@ -63,6 +58,15 @@ const FooterMenu = styled.nav`
     } 
 
     a {
+        color: var(--grayish-blue);
+        text-decoration: none;
+        transition: all .25s ease-in-out;
+        &:hover {
+            @media (hover:hover) {
+                color: var(--lime-green)
+            }
+        }
+
         @media (min-width: 1280px) {
             width: 50%;
         }

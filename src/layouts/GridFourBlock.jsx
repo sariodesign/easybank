@@ -26,11 +26,32 @@ const GridItem = styled.article`
     align-items: center;
     display: flex;
     flex-direction: column;
+    margin-bottom: 34px;
+
+    img {
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+`
+
+const GridItemContent = styled.div`
+    background-color: ${props => props.bg || 'transparent'};
+    padding: ${props => props.pad || 'transparent'};
+
+    ${props => props.centered && css`
+        text-align: center;
+    `}
+
+    span {
+        color: var(--dark-blue);
+        font-size: 12px;
+    }
 
     h3 {
         color: var(--dark-blue);
         font-weight: 400;
-        margin: 0 0 26px;
+        margin: 0 0 16px;
+        transition: all .25s ease-in-out;
 
         &:hover {
             color: var(--lime-green);
@@ -43,30 +64,26 @@ const GridItem = styled.article`
 
     p {
         color: var(--grayish-blue);
-        margin: 0 0 34px;
-
-        @media (min-width: 1280px) {
-            margin-bottom: 0;
-        }
-    }
-
-    img {
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
+        margin: 0
     }
 `
 
-function GridFourBlock({items, icon}) {
+function GridFourBlock({items, limit, icon, bg, pad, centered = false}) {
     return (
-        <GridContainer items={items} icon={icon}>
+        <GridContainer items={items} icon={icon} limit={limit}>
             {
                 items.map((item, index) => 
-                    <GridItem key={index}>
-                        <img src={item.image} alt={item.title} />
-                        { item.author && <span>{item.author}</span> }
-                        <h3>{item.title}</h3>
-                        <p>{item.abstract}</p>
-                    </GridItem>
+                    { limit <= index && (
+                            <GridItem>
+                                <img src={item.image} alt={item.title} />
+                                <GridItemContent bg={bg} pad={pad} centered={centered}>
+                                    { item.author && <span>{item.author}</span> }
+                                    <h3>{item.title}</h3>
+                                    <p>{item.abstract}</p>
+                                </GridItemContent>
+                            </GridItem>
+                        )
+                    }
                 )
             }
         </GridContainer>

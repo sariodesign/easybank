@@ -32,7 +32,7 @@ function Reason() {
                 title="Why choose Easybank?"
                 subtitle="We leverage Open Banking to turn your bank account into your financial hub. Control your finances like never before."
             />
-            <GridFourBlock items={reasons} icon />
+            <GridFourBlock items={reasons} icon centered={true} limit={4} />
         </Content>
     )
 }

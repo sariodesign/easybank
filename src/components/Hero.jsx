@@ -59,15 +59,15 @@ const HeroContent = styled.div`
 `
 
 
-function Hero() {
+function Hero({title, subtitle}) {
     return (
         <HeroContainer>
             <figure>
                 <img src="./image-mockups.png" alt="Device image" />
             </figure>
             <HeroContent>
-                <h1>Next generation <br /> digital banking</h1>
-                <p>Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing and much more.</p>
+                <h1>{title}</h1>
+                <p>{subtitle}</p>
                 <Button link="true" path="/register" label="Request invite" color="var(--white)" />
             </HeroContent>
         </HeroContainer>
