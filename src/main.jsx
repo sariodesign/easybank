@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import Careers from './pages/Careers';
 import Privacy from './pages/Privacy';
+import Request from './pages/Request';
 import Icons from './utilities/Icons';
 import './index.css'
 import {

@@ -1,11 +1,14 @@
 import styled, { css } from 'styled-components';
 
 const GridContainer = styled.div`
+    padding-top: 54px;
+
     @media (min-width: 1280px) {
         display: grid;
         grid-gap: 32px;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: auto;
+        padding-top: 72px
     }
 
     ${props => props.icon && css`

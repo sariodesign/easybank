@@ -75,12 +75,13 @@ const FooterMenu = styled.nav`
 `
 
 const FooterCopy = styled.div`
+    align-items: center;
     display: flex;
     gap: 20px;
     flex-direction: column;
-    align-items: flex-end;
 
     @media (min-width: 1280px) {
+        align-items: flex-end;
         margin-left: auto;
     }
 `
@@ -105,7 +106,7 @@ function Footer() {
                     { menuLinks.map((item, index) => <Link key={index} to={item.path}>{item.label}</Link>) }
                 </FooterMenu>
                 <FooterCopy>
-                    <Button link="true" path="/register" label="Request invite" />
+                    <Button link="true" path="/request" label="Request invite" />
                     <span>&copy; Easybank. All Right Reserved</span>
                 </FooterCopy>
             </FooterInner>

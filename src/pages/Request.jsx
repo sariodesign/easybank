@@ -1,16 +1,26 @@
 import Page from '../layouts/Page';
-import Main from '../layouts/Main';
+import Hero from '../components/Hero';
+import IntroSection from '../layouts/IntroSection';
+import Content from '../layouts/Content';
 import RequestForm from '../components/RequestForm';
 
-function Register() {
+function Request() {
 
     return (
         <Page>
-            <Main itemsCentered>
+            <Hero 
+                title="Request page digital banking" 
+                subtitle="Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing and much more."
+            />
+            <Content bg="var(--light-grayish-blue)">
+                <IntroSection 
+                    title="Request information"
+                    subtitle="Our Consultants are at your disposal to provide you with more information about our products and services. Leave your details and you will be contacted shortly."
+                />
                 <RequestForm />
-            </Main>
+            </Content>
         </Page>
     )
 }
 
-export default Register;
+export default Request;

@@ -9,6 +9,7 @@ const Field = styled.div`
         width:  calc(33% - 8px);
 
         ${props => props.submit && css`
+            margin-bottom: 0;
             margin-left: auto;
             width: auto;
         `}

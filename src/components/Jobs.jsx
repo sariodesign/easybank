@@ -66,8 +66,14 @@ const JobsList = styled.ul`
 const JobsFilter = styled.div`
     align-items: center;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin-bottom: 16px;
+    padding-top: 54px;
+
+    @media (min-width: 1280px) {
+        justify-content: flex-end;
+        padding-top: 72px;
+    }
 `
 
 const JobsFilterLabel = styled.h4`
@@ -90,8 +96,9 @@ const JobItem = styled.li`
     color: var(--dark-blue);
     column-gap: 12px;
     display: flex;
+    flex-wrap: wrap;
     margin: 0 0 8px;
-    padding: 8px 0 16px;
+    padding-bottom: 16px;
 `
 
 const JobTitle = styled.h3`
@@ -99,27 +106,47 @@ const JobTitle = styled.h3`
     font-weight: 400;
     flex-grow: 1;
     margin: 0;
+
+    @media (max-width: 1279px) {
+        flex: 1 0 auto;
+        margin-bottom: 8px;
+        width: 100%;
+    }
 `
 
 const JobCategory = styled.span`
     background-color: var(--dark-blue);
     color: var(--lime-green);
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
     line-height: 16px;
     padding: 2px 4px;
     text-transform: capitalize;
+
+    @media (min-width: 1280px) {
+        font-size: 12px
+    }
 `
 
 const JobPlace = styled.span`
-    font-size: 12px;
+    flex: 1;
+    font-size: 10px;
     font-style: italic;
     line-height: 1;
+
+    @media (min-width: 1280px) {
+        font-size: 12px
+    }
 `
 
 const JobDate = styled.span`
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
+    margin-left: auto;
+
+    @media (min-width: 1280px) {
+        font-size: 12px
+    }
 `
 
 function Jobs() {

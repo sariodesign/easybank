@@ -6,6 +6,7 @@ const ButtonWrap = styled.button`
     border-radius: 24px;
     background: ${props => props.bg || "linear-gradient(-45deg,var(--lime-green),var(--bright-cyan))"};
     color: ${props => props.color || "#fefefe"};
+    cursor: pointer;
     height: 40px;
     padding: 8px 12px;
     width: 160px;

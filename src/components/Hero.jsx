@@ -68,7 +68,7 @@ function Hero({title, subtitle}) {
             <HeroContent>
                 <h1>{title}</h1>
                 <p>{subtitle}</p>
-                <Button link="true" path="/register" label="Request invite" color="var(--white)" />
+                <Button link="true" path="/request" label="Request invite" color="var(--white)" />
             </HeroContent>
         </HeroContainer>
     )

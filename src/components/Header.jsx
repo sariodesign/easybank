@@ -71,7 +71,7 @@ function Header({ isMobileDevice, openMenu }) {
                             <HeaderNav>
                     { menuLinks.map((item, index) => !item.footer && <Link key={index} to={item.path}>{item.label}</Link> /*item.header && <Link key={index} to={item.path}>{item.label}</Link>*/ ) }
                             </HeaderNav>
-                            <Button link="true" path="/register" label="Request invite" />
+                            <Button link="true" path="/request" label="Request invite" />
                         </React.Fragment>
                     )
                 }
