@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import Careers from './pages/Careers';
 import Privacy from './pages/Privacy';
+import Icons from './utilities/Icons';
 import './index.css'
 import {
   BrowserRouter,
@@ -15,6 +16,7 @@ import {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <Icons />
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />

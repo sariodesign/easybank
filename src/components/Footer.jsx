@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import menuLinks from '../utilities/Menu'
 import socialLinks from '../utilities/Socials'
 import Button from '../subcomponents/Button'
+import Icon from '../subcomponents/Icon'
 
 const FooterContainer = styled.footer`
     background-color: var(--dark-blue);
@@ -15,7 +16,7 @@ const FooterInner = styled.div`
     flex-direction: column;
 
     @media (min-width: 1280px) {
-        align-items: flex-start;
+        align-items: stretch;
         flex-direction: row;
         max-width: 1280px;
         margin: 0 auto;
@@ -77,6 +78,7 @@ const FooterCopy = styled.div`
     display: flex;
     gap: 20px;
     flex-direction: column;
+    align-items: flex-end;
 
     @media (min-width: 1280px) {
         margin-left: auto;
@@ -96,7 +98,7 @@ function Footer() {
                         <FooterLogo src="./logo-inverse.svg" alt="Easybank logo" />
                     </Link>
                     <Socials>
-                        { socialLinks.map((item,index) => <Link key={index} to={item.path}><img src={item.icon} /></Link>) }
+                        { socialLinks.map((item,index) => <Link key={index} to={item.path}><Icon name={item.icon} /></Link>) }
                     </Socials>
                 </FooterCompany>
                 <FooterMenu>

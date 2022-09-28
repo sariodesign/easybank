@@ -1,22 +1,22 @@
 const socialLinks = [
     {
-        icon: './icon-facebook.svg',
+        icon: '#facebook',
         path: '/'
     },
     {
-        icon: './icon-youtube.svg',
+        icon: '#twitter',
         path: '/'
     },
     {
-        icon: './icon-twitter.svg',
+        icon: '#instagram',
         path: '/'
     },
     {
-        icon: './icon-pinterest.svg',
+        icon: '#youtube',
         path: '/'
     },
     {
-        icon: './icon-instagram.svg',
+        icon: '#pinterest',
         path: '/'
     }
 ];

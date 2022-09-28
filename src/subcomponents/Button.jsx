@@ -3,10 +3,12 @@ import styled, { css } from 'styled-components';
 
 const ButtonWrap = styled.button`
     border: 0;
-    border-radius: 16px;
+    border-radius: 24px;
     background: ${props => props.bg || "linear-gradient(-45deg,var(--lime-green),var(--bright-cyan))"};
     color: ${props => props.color || "#fefefe"};
+    height: 40px;
     padding: 8px 12px;
+    width: 160px;
 
     a {
         color: var(--white);

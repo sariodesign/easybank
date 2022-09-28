@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useState } from 'react';
 
 const jobs = [
     {
@@ -33,13 +34,13 @@ const jobs = [
     },
     {
         title: 'UI designer',
-        category: 'Design',
+        category: 'design',
         place: 'Manchester, United Kingdom',
         date: '09 Set'
     },
     {
         title: 'UX Designer',
-        category: 'Design',
+        category: 'design',
         place: 'Manchester, United Kingdom',
         date: '09 Set'
     },
@@ -61,6 +62,26 @@ const JobsList = styled.ul`
     list-style: none;
     margin: 0;
     padding: 0;
+`
+const JobsFilter = styled.div`
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+`
+
+const JobsFilterLabel = styled.h4`
+    color: var(--dark-blue);
+    margin: 0 8px 0 0;
+`
+
+const JobsFilterItem = styled.select`
+    border: 1px solid var(--dark-blue);
+    box-sizing: border-box;
+    color: var(--dark-blue);
+    height: 32px;
+    padding: 4px;
+    text-transform: capitalize;
 `
 
 const JobItem = styled.li`
@@ -84,9 +105,9 @@ const JobCategory = styled.span`
     background-color: var(--dark-blue);
     color: var(--lime-green);
     font-size: 12px;
-    line-height: 16px;
     font-weight: 700;
-    padding: 4px;
+    line-height: 16px;
+    padding: 2px 4px;
     text-transform: capitalize;
 `
 
@@ -97,23 +118,66 @@ const JobPlace = styled.span`
 `
 
 const JobDate = styled.span`
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
 `
 
-
-
 function Jobs() {
+    let jobsContent
+    const [filterCategory, setFilterCategory] = useState('all')
+
+    const jobsFiltered = (filterArg) => {
+        if(filterArg != 'all') {
+            jobsContent = jobs.filter(job => job.category === filterArg).map((item, index) => {
+                return (
+                    <JobItem key={index}>
+                        <JobTitle>{item.title}</JobTitle>
+                        <JobCategory>{item.category}</JobCategory>
+                        <JobPlace>{item.place}</JobPlace>
+                        <JobDate>{item.date}</JobDate>
+                    </JobItem>
+                )
+            })
+        }  else {
+            jobsContent = jobs.map((job, index) => {
+                return (
+                    <JobItem key={index}>
+                        <JobTitle>{job.title}</JobTitle>
+                        <JobCategory>{job.category}</JobCategory>
+                        <JobPlace>{job.place}</JobPlace>
+                        <JobDate>{job.date}</JobDate>
+                    </JobItem>
+                )
+            })
+        }
+    }
+
+    jobsFiltered(filterCategory)
+
+    const handlerFilterCategory = (e) => {
+        setFilterCategory(e.target.value)
+    }
+
+    let categories = [];
+    jobs.forEach(item => {
+        let cat = item.category
+        if(!categories.includes(cat)){
+            categories.push(cat)
+        }
+    })
+
     return (
         <JobsList>
-            {
-                jobs.map((job, index) => <JobItem>
-                    <JobTitle>{job.title}</JobTitle>
-                    <JobCategory>{job.category}</JobCategory>
-                    <JobPlace>{job.place}</JobPlace>
-                    <JobDate>{job.date}</JobDate>
-                </JobItem>)
-            }    
+            <JobsFilter>
+                <JobsFilterLabel>Filter by:</JobsFilterLabel>
+                <JobsFilterItem onChange={handlerFilterCategory} defaultValue="all">
+                    <option value="all">Choose category</option>
+                    {   categories &&
+                        categories.map((item, index) => <option value={item} key={index}>{item}</option> )
+                    }   
+                </JobsFilterItem>
+            </JobsFilter>
+            { jobsContent }    
         </JobsList>
     )
 }
