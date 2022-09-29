@@ -99,11 +99,11 @@ function Footer() {
                         <FooterLogo src="./logo-inverse.svg" alt="Easybank logo" />
                     </Link>
                     <Socials>
-                        { socialLinks.map((item,index) => <Link key={index} to={item.path}><Icon name={item.icon} /></Link>) }
+                        { socialLinks.map((item,index) => <Link key={index} to={item.path} aria-label={item.label}><Icon name={item.icon} /></Link>) }
                     </Socials>
                 </FooterCompany>
                 <FooterMenu>
-                    { menuLinks.map((item, index) => <Link key={index} to={item.path}>{item.label}</Link>) }
+                    { menuLinks.map((item, index) => <Link key={index} to={item.path} aria-label={item.label}>{item.label}</Link>) }
                 </FooterMenu>
                 <FooterCopy>
                     <Button link="true" path="/request" label="Request invite" />

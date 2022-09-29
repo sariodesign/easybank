@@ -68,7 +68,7 @@ function Header({ isMobileDevice, openMenu }) {
                         </HeaderIcon>
                     ) : ( 
                         <React.Fragment>
-                            <HeaderNav role="navigation">
+                            <HeaderNav>
                                 { menuLinks.map((item, index) => !item.footer && <Link key={index} to={item.path} aria-label={item.label}>{item.label}</Link>) }
                             </HeaderNav>
                             <Button link="true" path="/request" label="Request invite" />
