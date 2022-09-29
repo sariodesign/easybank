@@ -10,6 +10,16 @@ const ButtonWrap = styled.button`
     height: 40px;
     padding: 8px 12px;
     width: 160px;
+`
+
+const ActionWrap = styled.div`
+    border: 0;
+    border-radius: 24px;
+    background: ${props => props.bg || "linear-gradient(-45deg,var(--lime-green),var(--bright-cyan))"};
+    cursor: pointer;
+    padding: 8px 12px;
+    text-align: center;
+    width: 160px;
 
     a {
         color: var(--white);
@@ -19,9 +29,9 @@ const ButtonWrap = styled.button`
 
 function Button({bg, color, link, path, label, children}) {
     return (
-        <ButtonWrap bg={bg} color={color}>
-            {link ? <Link to={path}>{label ? label : children }</Link> : children}
-        </ButtonWrap>
+        <ActionWrap>
+            { link ? <Link to={path} aria-label="Request">{label ? label : children }</Link> : <ButtonWrap bg={bg} color={color}>{children}</ButtonWrap> }
+        </ActionWrap>
     )
 }
 
